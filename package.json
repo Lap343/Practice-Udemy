@@ -1,0 +1,26 @@
+{
+  "name": "practice-udemy",
+  "version": "1.0.0",
+  "description": "Complete Node.js guide",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lap343/Practice-Udemy-.git"
+  },
+  "author": "Luis Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lap343/Practice-Udemy-/issues"
+  },
+  "homepage": "https://github.com/Lap343/Practice-Udemy-#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
