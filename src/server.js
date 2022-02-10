@@ -2,12 +2,16 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
-    console.log("I'm in the middleware");
-    // Allows the next middleware to fire off
+app.use('/', (rew, res, next) => {
+    console.log('This always runs!');
     next();
 });
-app.use((req, res, next) => {
+
+app.use('/add-product', (req, res) => {
+    console.log("I am also in the hi");
+    res.send('<h1>Add a product!</h1>');
+});
+app.use('/', (req, res) => {
     console.log("I am also in the middleware");
     res.send('<h1>Hello from Express!</h1>');
 });
