@@ -1,18 +1,14 @@
+// Npm imports
 const express = require('express');
-const path = require('path');
-
-const rootDir = require('../util/path');
-const adminData = require('./admin');
+// Products import
+const { getProducts, getCart, getCheckout, getIndex } = require('../controllers/shop');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    const products = adminData.products;
-    res.render('shop', {
-        prods: products, 
-        pageTitle: 'Shop', 
-        path: '/', 
-    });
-});
+// GET
+router.get('/', getIndex);
+router.get('/products', getProducts);
+router.get('/cart', getCart);
+router.get('/checkout', getCheckout);
 
 module.exports = router;
