@@ -10,6 +10,17 @@ exports.getProducts = (req, res) => {
     });
 }
 
+exports.getProductDetails = (req, res) => {
+    const prodId = req.params.productId
+    Product.findById(prodId, product => {
+        res.render('shop/product-detail', {
+            product: product,
+            pageTitle: "Product Details",
+            path: '/products'
+        })
+    })
+}
+
 exports.getIndex = (req, res) => {
     Product.fetchAll((products) => {
         res.render('shop/index', {

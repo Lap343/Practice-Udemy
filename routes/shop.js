@@ -6,7 +6,8 @@ const {
     getCart, 
     getCheckout, 
     getIndex, 
-    getOrders 
+    getOrders,
+    getProductDetails
 } = require('../controllers/shop');
 
 const router = express.Router();
@@ -14,6 +15,7 @@ const router = express.Router();
 // GET
 router.get('/', getIndex);
 router.get('/products', getProducts);
+router.get('/products/:productId', getProductDetails);
 router.get('/cart', getCart);
 router.get('/checkout', getCheckout);
 router.get('/orders', getOrders);
