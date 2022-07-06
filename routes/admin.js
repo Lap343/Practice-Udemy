@@ -4,7 +4,8 @@ const express = require('express');
 const { 
     getAddProduct, 
     postAddProduct, 
-    getViewProducts 
+    getViewProducts, 
+    getEditProduct
 } = require('../controllers/admin');
 
 const router = express.Router();
@@ -12,6 +13,7 @@ const router = express.Router();
 // GET
 router.get('/add-product', getAddProduct);
 router.get('/products', getViewProducts);
+router.get('/edit-product/:productId', getEditProduct);
 // POST
 router.post('/add-product', postAddProduct);
 
